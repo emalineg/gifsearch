@@ -1,0 +1,33 @@
+{{!-- home.handlebars --}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tenor Search 2</title>
+    </head>
+    {{!----------}}
+    <body>
+        <h1>Search for GIFS</h1>
+        {{!-- Submit Form --}}
+        <form action="/">
+        <input type="text" name="term">
+        {{!-- Search Button --}}
+        <button type="submit">Search</button>
+        </form>
+        {{!-- Show 10 gifs --}}
+       {{#each gifs}}
+            {{!-- set the data-width to any value --}}
+            {{!-- We are using properties of the girl to fill in info needed to render the gif --}}
+            <div class="tenor-gif-embed" 
+                 data-postid="{{ this.id}}" 
+                 data-share-method="host" data-width="500px" data-aspect-ratio="1.2266666666666666">
+                 {{!-- Gif Source --}}
+                <a href="{{ this.itemurl }}"></a>
+                {{!-- Link to tenor page with the gif --}}
+                <a href="{{ this.url }}"></a>
+            </div>
+            {{!-- Tenor API Script Tag --}}
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+       {{/each}}
+    </body>
+</html>
