@@ -2,7 +2,7 @@
 // ---------------
 const express = require('express');
 const tenor = require('tenorjs').client({
-    "Key": "AIzaSyDESZUdI4k1MrK04Ncji7d2GYLcCPyscPY", 
+    "Key": "API_KEY_HERE", 
     "Filter": "high",
     "Locale": "en_US",
 });
